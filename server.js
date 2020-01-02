@@ -1,3 +1,5 @@
+// tutorial: https://www.youtube.com/watch?v=9FQrFah9rnc&feature=push-u-sub&attr_tag=h7c0ZZHBqhC11MhD%3A6
+
 const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
@@ -17,6 +19,9 @@ app.use(express.json());
 
 // Enable cors
 app.use(cors());
+
+// Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/api/v1/stores', require('./routes/stores'))
